@@ -4,21 +4,16 @@ This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
+* ruby -v'2.3.0'
 
-* Ruby version
+* rails -v'5.0.5'
 
-* System dependencies
+* rvm use 2.3.0
 
-* Configuration
+* rvm gemset create ram
 
-* Database creation
+* rvm gemset use ram
 
-* Database initialization
+* bundle (for after who wants to clone this application)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* rails s -b 0.0.0.0
