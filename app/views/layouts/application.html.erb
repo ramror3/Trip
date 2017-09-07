@@ -1,0 +1,41 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Trip</title>
+      <%= csrf_meta_tags %>
+
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </head>
+
+    <body>
+      <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><b>TRIP</b></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Search Ride", search_path, remote: true %></li>
+          <li><%= link_to "Message", message_path, remote: true %></li>
+          <li><%= link_to "My Trips", my_trips_path, remote: true %></li> 
+          <li><%= link_to "New Trip", new_trip_path, remote: true %></li>
+          <li><%= link_to "Future Trip", future_trip_path, remote: true %></li>
+          <% if !current_user.blank? %>
+          <li id="sign1"><%= link_to t('.Sign Out', :default => t("helpers.links.Sing Out")),
+              destroy_user_session_path %></li>
+
+          <% end %>   
+        </ul>
+      </div>
+  </nav>
+    	<p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <div class="main_body">
+      <%= yield %>
+      </div>
+    </body>
+  </html>

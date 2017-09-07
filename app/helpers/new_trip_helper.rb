@@ -1,0 +1,2 @@
+module NewTripHelper
+end
